@@ -11,3 +11,11 @@ Supports removing tasks with a "Remove" button.
 Uses useState for state management.
 Features a modern, attractive design with gradients, shadows, and hover effects.
 Fully responsive layout for all devices.
+
+Assignment Details
+
+This project fulfills the Tuesday: React Data Fetching & Effects requirements of the Week 2 assignment:
+Fetched tasks from JSONPlaceholder API.
+Added loading and error states during data fetching.
+Implemented React Router with Home and About routes.
+Added a "Complete" button with UI state (strikethrough).

@@ -46,7 +46,7 @@
   border-radius: 8px;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
   outline: none;
-  min-width: 0; /* Prevents flex item overflow */
+  min-width: 0;
 }
 
 .task-form input:focus {
@@ -65,7 +65,7 @@
   font-weight: 600;
   cursor: pointer;
   transition: transform 0.1s ease, box-shadow 0.3s ease;
-  min-width: 100px; /* Ensures button is touch-friendly */
+  min-width: 100px;
 }
 
 .task-form button:hover {
@@ -106,11 +106,46 @@
 .task-item span {
   font-size: 1.1rem;
   color: #333;
-  word-break: break-word; /* Prevents text overflow */
+  word-break: break-word;
+}
+
+/* Completed task styling */
+.task-item.completed span {
+  text-decoration: line-through;
+  color: #888;
+}
+
+/* Task buttons container */
+.task-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+/* Complete button */
+.complete-btn {
+  padding: 8px 15px;
+  background: #28a745;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.1s ease;
+  min-width: 80px;
+}
+
+.complete-btn:hover {
+  background: #218838;
+  transform: scale(1.05);
+}
+
+.complete-btn:active {
+  transform: scale(0.95);
 }
 
 /* Remove button */
-.task-item button {
+.task-item button:not(.complete-btn) {
   padding: 8px 15px;
   background: #ff6b6b;
   color: #ffffff;
@@ -120,16 +155,35 @@
   font-weight: 600;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.1s ease;
-  min-width: 80px; /* Ensures touch-friendly size */
+  min-width: 80px;
 }
 
-.task-item button:hover {
+.task-item button:not(.complete-btn):hover {
   background: #e55a5a;
   transform: scale(1.05);
 }
 
-.task-item button:active {
+.task-item button:not(.complete-btn):active {
   transform: scale(0.95);
+}
+
+/* Loading and error states */
+.loading,
+.error {
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.loading {
+  color: #4a90e2;
+  background: #e9f1ff;
+}
+
+.error {
+  color: #ff6b6b;
+  background: #ffe9e9;
 }
 
 /* Media Queries for Responsiveness */
@@ -170,7 +224,8 @@
     font-size: 1rem;
   }
 
-  .task-item button {
+  .complete-btn,
+  .task-item button:not(.complete-btn) {
     font-size: 0.85rem;
     padding: 6px 12px;
     min-width: 70px;
@@ -212,13 +267,14 @@
     font-size: 0.95rem;
   }
 
-  .task-item button {
+  .complete-btn,
+  .task-item button:not(.complete-btn) {
     font-size: 0.8rem;
     padding: 5px 10px;
     min-width: 60px;
   }
 
   .task-item:hover {
-    transform: none; /* Disable hover effect on small screens */
+    transform: none;
   }
 }
