@@ -1,71 +1,25 @@
-Task Manager Backend - Week 2 Assignment (Express Server with PostgreSQL)
+# Task Manager - Week 2 Assignment (React Frontend)
 
-Overview
+## Overview
+This is the React frontend for the Task Manager application, built as part of the Week 2 assignment (Monday-Friday). It integrates with a custom Express/PostgreSQL backend for task management.
 
-This is the backend for the Task Manager application, built as part of the Week 2 assignment (Wednesday-Thursday). Initially set up with Express, JWT authentication, and in-memory storage on Wednesday, it has been enhanced on Thursday to use PostgreSQL for persistent data storage. The API provides endpoints for managing tasks, with data validation, error handling, and CORS support.
+### Features
+- Fetches tasks from `http://localhost:5000/api/tasks`.
+- Adds new tasks via a form, saving to the database.
+- Deletes tasks and toggles completion status, syncing with the backend.
+- Secured with JWT authentication.
+- Includes loading states and error handling for API operations.
 
-Features
+## Setup
+1. Ensure the backend (`task-manager-backend`) is running at `http://localhost:5000`.
+2. Install dependencies: `npm install`.
+3. Start the app: `npm start`.
 
+## Integration
+- Connected to the Express backend with PostgreSQL, handling CRUD operations.
+- Uses JWT for protected routes.
 
-
-
-
-PostgreSQL Integration: Tasks are now stored in a PostgreSQL database with the following schema:
-
-
-
-
-
-Table: tasks
-
-
-
-Columns:
-
-
-
-
-
-id (SERIAL, PRIMARY KEY)
-
-
-
-text (VARCHAR, NOT NULL)
-
-
-
-completed (BOOLEAN, DEFAULT false)
-
-
-
-created_at (TIMESTAMP, DEFAULT NOW())
-
-
-
-API Endpoints (protected with JWT authentication):
-
-
-
-
-
-POST /api/login: Generates a JWT token for authentication.
-
-
-
-GET /api/tasks: Retrieves all tasks from the database, ordered by created_at (descending).
-
-
-
-POST /api/tasks: Adds a new task to the database.
-
-
-
-DELETE /api/tasks/:id: Deletes a task by ID.
-
-
-
-Data Validation: Ensures task text is not empty before adding to the database.
-
-
-
-Error Handling: Handles database errors, invalid tokens, and missing task data with appropriate status codes and messages.
+## Submission
+- Frontend GitHub: [https://github.com/yourusername/task-manager]
+- Backend GitHub: [https://github.com/yourusername/task-manager-backend]
+- Screenshots/Video: Included
