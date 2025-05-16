@@ -1,0 +1,109 @@
+/* Import Google Fonts for consistent typography */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.error-page {
+  max-width: 450px;
+  margin: 60px auto;
+  padding: 30px;
+  background: linear-gradient(135deg, #fff, #f5f7fa);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.error-page h2 {
+  color: #e74c3c;
+  font-size: 2.5em;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.error-page p {
+  color: #7f8c8d;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.error {
+  color: #e74c3c;
+  font-size: 1.1em;
+  padding: 10px;
+  background: #fdecea;
+  border-radius: 8px;
+  margin: 15px auto;
+  max-width: 350px;
+  box-shadow: 0 2px 5px rgba(231, 76, 60, 0.2);
+  animation: slideUp 0.5s ease-out;
+}
+
+button {
+  padding: 12px 25px;
+  font-size: 1.1em;
+  background: linear-gradient(90deg, #3498db, #2980b9);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(52, 152, 219, 0.3);
+}
+
+button:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+button:hover:not(:disabled) {
+  background: linear-gradient(90deg, #2980b9, #1f6b8c);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(52, 152, 219, 0.4);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .error-page {
+    margin: 30px auto;
+    padding: 20px;
+  }
+
+  .error-page h2 {
+    font-size: 2em;
+  }
+
+  .error-page p {
+    font-size: 1em;
+  }
+
+  .error {
+    max-width: 100%;
+    margin: 10px 0;
+  }
+
+  button {
+    width: 100%;
+    font-size: 1em;
+  }
+}
