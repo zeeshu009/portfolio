@@ -16,6 +16,7 @@ function initializeNotesFile() {
 }
 
 
+
 function readNotes() {
     try {
         const data = fs.readFileSync(NOTES_FILE);

@@ -49,10 +49,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Home token={token} isAuthenticated={isAuthenticated} />} />
         <Route path="/about" element={<About />} />
-        {/* Handle API routes explicitly */}
+         <Route path="/info" element={<About />}  />
         <Route path="/api/*" element={<ErrorPage />} />
-        {/* Catch-all route for other undefined paths */}
         <Route path="*" element={<ErrorPage />} />
+
       </Routes>
       {error && <div className="error">{error}</div>}
     </Router>
